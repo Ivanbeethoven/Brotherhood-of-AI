@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <strong>「研究论文千千万，<a href="https://github.com/pengjiezhang">Pengjie Zhang</a> 帮你筛出精华款。」</strong>
+  <strong>「研究论文千千万，<a href="https://github.com/ZPJ-LEFT">Pengjie Zhang</a> 帮你筛出精华款。」</strong>
 </p>
 
 ---
