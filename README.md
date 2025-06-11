@@ -1,8 +1,8 @@
 # 🤖 Brotherhood of Artificial Intelligence
 
 <p align="center">
-  <a href="https://github.com/pengjiezhang">
-    <img src="https://github.com/pengjiezhang.png?size=120" width="120" alt="Pengjie Zhang">
+  <a href="https://github.com/ZPJ-LEFT">
+    <img src="https://github.com/ZPJ-LEFT.png?size=120" width="120" alt="Pengjie Zhang">
   </a>
 </p>
 
