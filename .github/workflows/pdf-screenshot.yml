@@ -1,10 +1,12 @@
 name: PDF Screenshot Generator
 
 on:
-  push:    # 任何 push 都触发
+  push:
+    branches: [main]   # 只在 main 分支被 push 时运行（即 PR merge 后）
+  workflow_dispatch:    # 也支持手动触发
 
 jobs:
-  generate-screenshot:
+  generate-screenshots:
     runs-on: ubuntu-latest
     if: github.actor != 'github-actions[bot]'   # 跳过机器人提交
     permissions:
@@ -22,42 +24,40 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install PyMuPDF
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install PyMuPDF
 
-      - name: Make cover_and_extract.py executable
-        run: chmod +x cover_and_extract.py
+      - name: Make script executable
+        run: chmod +x cover.py
 
-      - name: Generate cover & extract images
+      - name: Generate covers and README for missing folders
         run: |
           set -euo pipefail
           IFS=$'\n'
 
-          echo "Scanning for PDFs…"
-          find . -type f -name '*.pdf' | while read -r pdf; do
-            # 去掉前导 './'
-            pdf_path="${pdf#./}"
-            dir=$(dirname "$pdf_path")
-
-            echo "→ Processing $pdf_path in $dir"
-            python3 cover_and_extract.py "$pdf_path" "$dir"
+          echo "📂 Scanning Weekly_upload/ for PDF directories…"
+          find Weekly_upload -mindepth 1 -maxdepth 1 -type d | while read -r dir; do
+            if [ ! -f "$dir/README.md" ]; then
+              echo "📝 Generating README for: $dir"
+              python3 cover.py "$dir" "$dir"
+            else
+              echo "✅ Skipping $dir (README already exists)"
+            fi
           done
 
-      - name: Commit and push generated images
+      - name: Commit and push generated content
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "PDF Screenshot Bot"
 
-          # 把所有新增或修改的 PNG 加入暂存区
           git add .
 
-          if git diff --staged --quiet; then
-            echo "No new images to commit"
+          if git diff --cached --quiet; then
+            echo "✅ No changes to commit"
           else
-            git commit -m "Auto-generate covers & images via cover_and_extract.py [skip ci]"
+            git commit -m "Auto-generate README and previews [skip ci]"
             BRANCH=$(git rev-parse --abbrev-ref HEAD)
-            # 直接推送，不做 pull/rebase
             git push origin "$BRANCH"
           fi
