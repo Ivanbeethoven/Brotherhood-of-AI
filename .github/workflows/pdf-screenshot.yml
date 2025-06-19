@@ -36,16 +36,25 @@ jobs:
         run: |
           set -euo pipefail
           IFS=$'\n'
+          updated=0
 
           echo "📂 Scanning Weekly_upload/ for PDF directories…"
-          find Weekly_upload -mindepth 1 -maxdepth 1 -type d | while read -r dir; do
+          for dir in $(find Weekly_upload -mindepth 1 -maxdepth 1 -type d); do
             if [ ! -f "$dir/README.md" ]; then
               echo "📝 Generating README for: $dir"
               python3 cover.py "$dir" "$dir"
+              updated=1
             else
               echo "✅ Skipping $dir (README already exists)"
             fi
           done
+
+          if [ "$updated" -eq 1 ]; then
+            echo "🟢 New README generated, updating main README..."
+            python3 readme_update.py
+          else
+            echo "ℹ️ No new README generated, skip updating main README."
+          fi
 
       - name: Commit and push generated content
         run: |
