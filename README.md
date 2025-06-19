@@ -20,13 +20,8 @@
 ## 论文索引
 
 
-### Week 00
-
-- 📄 [本周论文详情](Weekly_upload/Week_00/README.md)
-  - [qwen-vl](Weekly_upload/Week_00/qwen-vl.pdf)
-
 ### Week 01
 
 - 📄 [本周论文详情](Weekly_upload/Week_01/README.md)
   - [GLEE](Weekly_upload/Week_01/GLEE.pdf)
-  - [qwen2.5vl](Weekly_upload/Week_01/qwen2.5vl.pdf)
+  - [qwen-vl](Weekly_upload/Week_01/qwen-vl.pdf)
