@@ -29,6 +29,7 @@
 ### Week 02
 
 - 📄 [本周论文详情](Weekly_upload/Week_02/README.md)
+  - [GRIT](Weekly_upload/Week_02/GRIT.pdf)
   - [PAM](Weekly_upload/Week_02/PAM.pdf)
   - [SAM](Weekly_upload/Week_02/SAM.pdf)
   - [SAM2](Weekly_upload/Week_02/SAM2.pdf)

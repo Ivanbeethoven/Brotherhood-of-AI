@@ -1,5 +1,22 @@
 # 📚 Week_02 论文精选
 
+## [GRIT](GRIT.pdf)
+
+**📝 摘要**：
+
+> Recent studies have demonstrated the efficacy of using Reinforcement Learning
+(RL) in building reasoning models that articulate chains of thoughts prior to pro-
+ducing final answers. However, despite ongoing advances that aim at enabling
+reasoning for vision-language tasks, existing open-source visual reasoning models
+typically generate reasoning content with pure natural language, lacking explicit
+integration of visual information. This limits their ability to produce clearly articu-
+lated and visually grounded reasoning chains. To this end, we propose Grounded
+
+<table><tr>
+  <td><img src="./GRIT_page1.png" alt="Page image" width="500"/></td>
+  <td><img src="./GRIT_page2.png" alt="Page image" width="500"/></td>
+</tr></table>
+
 ## [PAM](PAM.pdf)
 
 **📝 摘要**：
