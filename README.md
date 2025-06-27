@@ -33,3 +33,11 @@
   - [PAM](Weekly_upload/Week_02/PAM.pdf)
   - [SAM](Weekly_upload/Week_02/SAM.pdf)
   - [SAM2](Weekly_upload/Week_02/SAM2.pdf)
+
+### Week 03
+
+- 📄 [本周论文详情](Weekly_upload/Week_03/README.md)
+  - [DAB-DETR](Weekly_upload/Week_03/DAB-DETR.pdf)
+  - [DINO](Weekly_upload/Week_03/DINO.pdf)
+  - [DN-DETR](Weekly_upload/Week_03/DN-DETR.pdf)
+  - [Mask DINO](Weekly_upload/Week_03/Mask DINO.pdf)
