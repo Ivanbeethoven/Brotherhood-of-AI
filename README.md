@@ -40,4 +40,4 @@
   - [DAB-DETR](Weekly_upload/Week_03/DAB-DETR.pdf)
   - [DINO](Weekly_upload/Week_03/DINO.pdf)
   - [DN-DETR](Weekly_upload/Week_03/DN-DETR.pdf)
-  - [Mask DINO](Weekly_upload/Week_03/Mask DINO.pdf)
+  - [Mask DINO](Weekly_upload/Week_03/Mask_DINO.pdf)
